@@ -7,8 +7,8 @@ services:
       - DBSERVER=database-2.cimr0kdyqj64.us-east-1.rds.amazonaws.com
       - DBPORT=3306
       - DBNAME=studentbookdb
-      - DBUSER=mahendra
-      - SPRING_DATASOURCE_PASSWORD=pass12345
+      - DBUSER=admin
+      - SPRING_DATASOURCE_PASSWORD=admin12345
       - SERVER_PORT=8080  # An Example for Overriding Server Port
     
     ports:
@@ -20,8 +20,8 @@ services:
       - DBSERVER=database-2.cimr0kdyqj64.us-east-1.rds.amazonaws.com
       - DBPORT=3306
       - DBNAME=studentbookdb
-      - DBUSER=mahendra
-      - SPRING_DATASOURCE_PASSWORD=pass12345
+      - DBUSER=admin
+      - SPRING_DATASOURCE_PASSWORD=admin12345
       - BOOK_API=http://book-service:8080 ## Ref Line#4 and #13 [ http://SERVICENAME:PORT]
     ports:
       - 50002:9002
