@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-api
+  template:
+    metadata:
+      labels:
+        app: student-api
+    spec:
+      containers:
+        - name: myapp
+          image: monica014/student-service
+          envFrom:
+            - configMapRef:
+                name: dbconfig
+          env:
+            - name: SERVER_PORT
+              value: '8080'
+            - name: BOOK_API
+              value: http://book-service
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: student-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: student-api
+  ports:
+  - targetPort: 8080
+    port: 80

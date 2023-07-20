@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dbconfig
+data:
+  DBUSER: admin
+  DBNAME: studentbookdb
+  SPRING_DATASOURCE_PASSWORD: admin12345
+  DBSERVER: database-1.cjzgzknditm4.us-east-1.rds.amazonaws.com
