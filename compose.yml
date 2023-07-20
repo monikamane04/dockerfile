@@ -4,7 +4,7 @@ services:
   book-service:             ## This becomes the HOSTNAME and is converted into http://book-service:9001/
     image: monica014/book-service  
     environment:
-      - DBSERVER=database-2.cimr0kdyqj64.us-east-1.rds.amazonaws.com
+      - DBSERVER=database-1.cjzgzknditm4.us-east-1.rds.amazonaws.com
       - DBPORT=3306
       - DBNAME=studentbookdb
       - DBUSER=admin
@@ -17,7 +17,7 @@ services:
   student-service:          ## This becomes the HOSTNAME and is converted into http://student-service:9002/
     image: monica014/student-service
     environment:
-      - DBSERVER=database-2.cimr0kdyqj64.us-east-1.rds.amazonaws.com
+      - DBSERVER=database-1.cjzgzknditm4.us-east-1.rds.amazonaws.com
       - DBPORT=3306
       - DBNAME=studentbookdb
       - DBUSER=admin
